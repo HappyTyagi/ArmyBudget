@@ -568,6 +568,7 @@ public class DocxGenaratorUtil {
 //                }
 //            }
 
+            double grandAllTotal11 = 0;
             for (Map.Entry<String, String> entry : coloumWiseAmount.entrySet()) {
                 String tabData = entry.getValue();
                 Boolean isNumber = ConverterUtils.isNumber(tabData + "");
@@ -581,33 +582,17 @@ public class DocxGenaratorUtil {
                     normalText(paragraph11.createRun(), 10, tabData, false);
                     ih++;
                 }
-            }
 
-
-            double grandAllTotal = 0;
-            for (Map.Entry<String, List<CDAReportResponse>> entry : map.entrySet()) {
-                String key = entry.getKey();
-
-                try {
-                    if (!key.equalsIgnoreCase("Sub Head")) {
-                        List<CDAReportResponse> tabData = entry.getValue();
-                        for (Integer i = 0; i < tabData.size(); i++) {
-                            Boolean isNumber = ConverterUtils.isNumber(tabData.get(i).getName() + "");
-                            if (isNumber) {
-                                grandAllTotal = grandAllTotal + Double.parseDouble(ConverterUtils.addDecimalPoint(tabData.get(i).getName()));
-                            } else {
-                                grandAllTotal = grandAllTotal + Double.parseDouble(ConverterUtils.addDecimalPoint(tabData.get(i).getName()));
-                            }
-                        }
-                    }
-                } catch (Exception e) {
-
+                if (isNumber) {
+                    grandAllTotal11 = grandAllTotal11 + Double.parseDouble(ConverterUtils.addDecimalPoint(tabData));
+                } else {
+                    grandAllTotal11 = grandAllTotal11 + Double.parseDouble(ConverterUtils.addDecimalPoint(tabData));
                 }
-            }
 
+            }
 
             XWPFParagraph paragraph11 = tableRow11.getCell(ih + 1).addParagraph();
-            normalText(paragraph11.createRun(), 10, ConverterUtils.addDecimalPoint((grandAllTotal / 2) + ""), false);
+            normalText(paragraph11.createRun(), 10, ConverterUtils.addDecimalPoint((grandAllTotal11) + ""), false);
 
 
             document.write(out);

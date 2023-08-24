@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BmsBackend" />
+        <module name="NavyBudget" />
         <module name="sdd" />
       </profile>
     </annotationProcessing>
@@ -15,6 +16,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BmsBackend" options="-parameters" />
+      <module name="NavyBudget" options="-parameters" />
       <module name="sdd" options="-parameters" />
     </option>
   </component>
