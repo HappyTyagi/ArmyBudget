@@ -15,6 +15,7 @@ public interface HrDataRepository extends JpaRepository<HrData, String> {
 
 
     HrData findByUserNameAndIsActive(String userName,String isActive);
+    HrData findByUserName(String userName);
 
     List<HrData> findByIsActive(String isActive);
 

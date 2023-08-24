@@ -230,26 +230,7 @@ public class ReportController {
         return new ResponseEntity<>(mangeReportService.getMainBEAllocationReportExcel(finYearId, allocationType, amountTypeId, fromDate, toDate,majorHd), HttpStatus.OK);
     }
 
-    //  UNIT REBASE ALLOCATION REPORT
-    @GetMapping("/getUnitRebaseReport/{fromDate}/{toDate}/{unitid}")
-    public ResponseEntity<ApiResponse<List<FilePathResponse>>> getUnitRebaseReport(@PathVariable(value = "fromDate") String fromDate, @PathVariable(value = "toDate") String toDate, @PathVariable(value = "unitid") String unitid) {
-        return new ResponseEntity<>(mangeReportService.getUnitRebaseReport(fromDate, toDate,unitid), HttpStatus.OK);
-    }
 
-    @GetMapping("/getUnitRebaseReportDoc/{fromDate}/{toDate}/{unitid}")
-    public ResponseEntity<ApiResponse<List<FilePathResponse>>> getUnitRebaseReportDoc(@PathVariable(value = "fromDate") String fromDate, @PathVariable(value = "toDate") String toDate, @PathVariable(value = "unitid") String unitid) {
-        return new ResponseEntity<>(mangeReportService.getUnitRebaseReportDoc(fromDate, toDate,unitid), HttpStatus.OK);
-    }
-
-    @GetMapping("/getUnitRebaseReportExcel/{fromDate}/{toDate}/{unitid}")
-    public ResponseEntity<ApiResponse<List<UnitRebaseReportResponce>>> getUnitRebaseReportExcel(@PathVariable(value = "fromDate") String fromDate, @PathVariable(value = "toDate") String toDate, @PathVariable(value = "unitid") String unitid) {
-        return new ResponseEntity<>(mangeReportService.getUnitRebaseReportExcel(fromDate, toDate,unitid), HttpStatus.OK);
-    }
-
-    @GetMapping("/getUnitRebaseDataAuthGrId/{authGrpId}")
-    public ResponseEntity<ApiResponse<List<UnitRebaseReportResponce>>> getUnitRebaseDataAuthGrId(@PathVariable(value = "authGrpId") String authGrpId) {
-        return new ResponseEntity<>(mangeReportService.getUnitRebaseDataAuthGrId(authGrpId), HttpStatus.OK);
-    }
 
     //  MA ALLOCATION REPORT
     @GetMapping("/getMAAllocationReport/{finYearId}/{allocationTypeBE}/{allocationTypeRE}/{allocationTypeMA}/{amountTypeId}/{majorHd}")

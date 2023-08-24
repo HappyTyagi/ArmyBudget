@@ -72,6 +72,9 @@ public class HrData {
     @Column(name = "fromDate")
     private String fromDate;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "CREATED_ON")
     private Timestamp createdOn;
 

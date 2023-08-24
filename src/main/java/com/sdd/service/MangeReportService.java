@@ -91,13 +91,6 @@ public interface MangeReportService {
     ApiResponse<List<FerResponse>> getMainBEAllocationReportExcel(String finYearId, String allocationType, String amountTypeId, String fromDate, String toDate,String majorHd);
 
 
- //  UNIT REBASE ALLOCATION REPORT
-    ApiResponse<List<FilePathResponse>> getUnitRebaseReport(String fromDate, String toDate,String unitid);
-    ApiResponse<List<FilePathResponse>> getUnitRebaseReportDoc(String fromDate, String toDate,String unitid);
-    ApiResponse<List<UnitRebaseReportResponce>> getUnitRebaseReportExcel(String fromDate, String toDate,String unitid);
-
-    ApiResponse<List<UnitRebaseReportResponce>> getUnitRebaseDataAuthGrId(String authGrpId);
-
 
     //   MA ALLOCATION REPORT
     ApiResponse<List<FilePathResponse>> getMAAllocationReport(String finYearId, String allocationTypeBE, String allocationTypeRE,String allocationTypeMA, String amountTypeId,String majorHd);
